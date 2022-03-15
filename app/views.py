@@ -6,8 +6,11 @@ This file creates your application.
 """
 
 from app import app
-from flask import render_template, request, redirect, url_for
-
+from fileinput import filename
+import os
+from flask import send_from_directory, render_template, request, redirect, url_for, flash, session, abort
+from werkzeug.utils import secure_filename
+from app.form import CreateProperty
 
 ###
 # Routing for your application.
@@ -17,7 +20,30 @@ from flask import render_template, request, redirect, url_for
 def home():
     """Render website's home page."""
     return render_template('home.html')
+@app.route('/properties/')
+def properties():
+    return render_template('properties.html')
 
+@app.route('/properties/create',methods=['GET', 'POST'])
+def create():
+    housing= ['Single-Family', 'Multi-Family', 'Apartment', 'Townhouse', 'Mansion', 'Condo', 'Co-operative']    
+    form = CreateProperty()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            title= form.propertytitle.data
+            desc=form.description.data
+            t_rooms= form.total_rooms.data
+            t_bathrooms = form.total_bathrooms.data
+            prices=form.price.data
+            ty= request.form['property_type']
+            locat_ = form.location.data
+            img = form.photo.data
+            filename = secure_filename(img.filename)
+            img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            flash('File Saved', 'success')
+            flash_errors(form)
+        return redirect(url_for('properties'))
+    return render_template('form.html', housing = housing, form = form,)
 
 @app.route('/about/')
 def about():
@@ -37,6 +63,7 @@ def flash_errors(form):
                 getattr(form, field).label.text,
                 error
             ), 'danger')
+
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
