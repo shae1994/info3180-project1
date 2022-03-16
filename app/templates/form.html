@@ -11,8 +11,8 @@
     <div class="form-background">
         <form action="{{url_for('create')}}" method="POST" enctype="multipart/form-data">
             
-            <div class="form-label">{{ form.propertytitle.label }}</p></div>
-                {{form.propertytitle}}
+            <div class="form-label">{{ form.title.label }}</p></div>
+                {{form.title}}
             <br>
 
                 
@@ -21,20 +21,20 @@
             <br>
 
             
-            <div class="form-label"> {{ form.total_rooms.label }}</div>
-                {{form.total_rooms}}
+            <div class="form-label"> {{ form.no_of_bedrooms.label }}</div>
+                {{form.no_of_bedrooms}}
             <br>
 
-            <div class="form-label"> {{ form.total_bathrooms.label }}</div>
-                {{form.total_bathrooms}}
+            <div class="form-label"> {{ form.no_of_bathrooms.label }}</div>
+                {{form.no_of_bathrooms}}
             <br>
 
             <div class="form-label"> {{ form.price.label }}</div>
                 {{form.price}}
             <br>
 
-            <div class="form-label"> {{ form.property_type.label }}</div>
-            <select name="property_type">
+            <div class="form-label"> {{ form.type.label }}</div>
+            <select name="type">
                 {% for type in housing %}
                 <option value="{{type }}">{{ type }}</option>
                 {% endfor %}
@@ -46,7 +46,7 @@
             <br>
 
             <br>
-            <input type="file" name="image"/>
+            <input type="file" name="photo"/>
             <br>
 
             <br>

@@ -13,7 +13,7 @@ from flask_wtf.file import FileRequired
 class CreateProperty(FlaskForm):
     title = StringField('Property Title', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
-    no_of_bedrooms = StringField('No. of Rooms', validators=[DataRequired(), Email()])
+    no_of_bedrooms = StringField('No. of Rooms', validators=[DataRequired()])
     no_of_bathrooms = StringField('No. of Bathrooms', validators=[DataRequired()])
     price = StringField('Price', validators=[DataRequired()])
     type = StringField('Property Type', validators=[DataRequired()])

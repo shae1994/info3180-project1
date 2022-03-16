@@ -30,12 +30,12 @@ def create():
     form = CreateProperty()
     if request.method == 'POST':
         if form.validate_on_submit():
-            title= form.propertytitle.data
+            title= form.title.data
             desc=form.description.data
-            t_rooms= form.total_rooms.data
-            t_bathrooms = form.total_bathrooms.data
+            t_rooms= form.no_of_bedrooms.data
+            t_bathrooms = form.no_of_bathrooms.data
             prices=form.price.data
-            ty= request.form['property_type']
+            type= request.form['type']
             locat_ = form.location.data
             img = form.photo.data
             filename = secure_filename(img.filename)
