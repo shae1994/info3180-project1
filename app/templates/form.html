@@ -2,58 +2,79 @@
     {% extends 'base.html' %}
     {% block main %}
 
-    <h1>Add New Property</h1>
-    <hr>
-    <br>
+   
     
     {% include 'flash_messages.html' %}
 
     <div class="form-background">
+        <h1>Add New Property</h1>
+
         <form action="{{url_for('create')}}" method="POST" enctype="multipart/form-data">
-            
-            <div class="form-label">{{ form.title.label }}</p></div>
-                {{form.title}}
-            <br>
+            <div class="grey">
+
+                <div id="form-label">{{ form.title.label }}</p>
+                    {{form.title}}
+                <br>
+                </div>
 
                 
-            <div class="form-label">{{ form.description.label }}</div>
-                {{form.description}}
-            <br>
-
-            
-            <div class="form-label"> {{ form.no_of_bedrooms.label }}</div>
-                {{form.no_of_bedrooms}}
-            <br>
-
-            <div class="form-label"> {{ form.no_of_bathrooms.label }}</div>
-                {{form.no_of_bathrooms}}
-            <br>
-
-            <div class="form-label"> {{ form.price.label }}</div>
-                {{form.price}}
-            <br>
-
-            <div class="form-label"> {{ form.type.label }}</div>
-            <select name="type">
-                {% for type in housing %}
-                <option value="{{type }}">{{ type }}</option>
-                {% endfor %}
-        </select>
+                <div id="form-label">{{ form.description.label }}
+                <br>
+                    {{form.description}}
+                </div>
 
 
-            <div class="form-label"> {{ form.location.label }}</div>
-                {{form.location}}
-            <br>
+                <div class="grid-container">
 
-            <br>
-            <input type="file" name="photo"/>
-            <br>
+                    <div id="form-label-l"> {{ form.no_of_bedrooms.label }}
+                    <br>
+                        {{form.no_of_bedrooms}}
+                    </div>
 
-            <br>
-            <div id="btn"><button type="submit">Send</button></div>
-            <br>
+                    
+                    <div id="form-label-r"> {{ form.no_of_bathrooms.label }}
+                        <br>
+                        {{form.no_of_bathrooms}}
+                    </div>
+                    
 
-            {{ form.csrf_token }}
+                    <div id="form-label-l-2"> {{ form.price.label }}
+                        <br>
+                        {{form.price}}
+                    </div>
+                    
+
+                    <div id="form-label-r-2"> {{ form.type.label }}
+                        <select name="type">
+                            {% for type in housing %}
+                            <option value="{{type }}">{{ type }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                
+
+
+                <div id="form-label-location"> {{ form.location.label }}
+                    <br>
+                    {{form.location}}
+                </div>
+                
+
+                <br>
+                <div id="form-label"> {{ form.photo.label }}
+                    <br>
+                    <input type="file" name="photo"/>
+                    <br>
+                </div>
+
+                <br>
+                <div id="btn"><button type="submit">Add Property</button></div>
+                <br>
+
+                {{ form.csrf_token }}
+            </div>
         </form>
 
     </div>
