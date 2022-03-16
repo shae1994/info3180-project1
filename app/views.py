@@ -4,13 +4,18 @@ Jinja2 Documentation:    https://jinja.palletsprojects.com/
 Werkzeug Documentation:  https://werkzeug.palletsprojects.com/
 This file creates your application.
 """
-
-from app import app
-from fileinput import filename
 import os
+from app import app, db
+from fileinput import filename
+from sqlalchemy import create_engine
+from app.models import Properties
 from flask import send_from_directory, render_template, request, redirect, url_for, flash, session, abort
 from werkzeug.utils import secure_filename
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import scoped_session
 from app.form import CreateProperty
+
+
 
 ###
 # Routing for your application.
@@ -29,21 +34,34 @@ def create():
     housing= ['Single-Family', 'Multi-Family', 'Apartment', 'Townhouse', 'Mansion', 'Condo', 'Co-operative']    
     form = CreateProperty()
     if request.method == 'POST':
+
         if form.validate_on_submit():
-            title= form.title.data
-            desc=form.description.data
-            t_rooms= form.no_of_bedrooms.data
-            t_bathrooms = form.no_of_bathrooms.data
-            prices=form.price.data
-            type= request.form['type']
-            locat_ = form.location.data
+
+            properties_db = Properties()
+
+            properties_db.title= form.title.data
+            properties_db.description=form.description.data
+            properties_db.no_of_bedrooms= form.no_of_bedrooms.data
+            properties_db.no_of_bathrooms = form.no_of_bathrooms.data
+            properties_db.price=form.price.data
+            properties_db.type= form.select.data
+            properties_db.location = form.location.data
+
             img = form.photo.data
             filename = secure_filename(img.filename)
             img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            properties_db.image_name = filename
+
+            db.session.add(properties_db)
+            db.session.commit()
+
             flash('File Saved', 'success')
+
             flash_errors(form)
+
         return redirect(url_for('properties'))
-    return render_template('form.html', housing = housing, form = form,)
+
+    return render_template('form.html', housing = housing, form = form)
 
 @app.route('/about/')
 def about():

@@ -1,18 +1,20 @@
 from . import db
-from werkzeug.security import generate_password_hash
 
 
 class Properties(db.Model):
-    __tablename__ = 'properties'
+    __tablename__ = "Properties"
 
-    propertyid = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80))
-    description = db.Column(db.String(180))
-    no_of_bedrooms = db.Column(db.String(10), unique=True)
-    no_of_bathrooms = db.Column(db.String(10))
-    type = db.Column(db.String(25))
-    price = db.Column(db.String(25))
-    location = db.Column(db.String(50))
+    propertyid      = db.Column(db.Integer, primary_key=True)
+    title           = db.Column(db.String(75), unique = True)
+    description     = db.Column(db.String(200))
+    no_of_bedrooms  = db.Column(db.Integer)
+    no_of_bathrooms = db.Column(db.Integer)
+    type            = db.Column(db.String(25))
+    price           = db.Column(db.Integer)
+    location        = db.Column(db.String(50))
+    image_name      = db.Column(db.String(50))
+
+
 
     def __init__(self, propertyid, title,description,no_of_bedrooms,no_of_bathrooms,type,price, location ):
         self.propertyid = propertyid
