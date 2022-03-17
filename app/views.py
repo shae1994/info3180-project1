@@ -54,7 +54,7 @@ def propertyDetails(propertyid):
 def create():
     
     form = CreateProperty()
-    housing= [{'types':'Single-Family'}, {'types':'Multi-Family'}, {'types':'Apartment'}, {'types':'Townhouse'}, {'types':'Mansion'}, {'types':'Condo'}, {'types':'Co-operative'}]
+    #housing= [{'types':'Single-Family'}, {'types':'Multi-Family'}, {'types':'Apartment'}, {'types':'Townhouse'}, {'types':'Mansion'}, {'types':'Condo'}, {'types':'Co-operative'}]
 
     if request.method == 'POST':
         if form.validate_on_submit():
@@ -89,7 +89,7 @@ def create():
             flash('Property Added', SUCCESS)
             flash_errors(form)
         return redirect(url_for('properties'))
-    return render_template('form.html', form = form, housing = housing, types='types')
+    return render_template('form.html', form = form)
 
 @app.route('/about/')
 def about():

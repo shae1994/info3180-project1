@@ -46,12 +46,7 @@
 
                     <div id="form-label-r-2"> {{ form.types.label }}
                         <br>
-                        
-                        <select name="types">
-                            {% for chosen in housing %}
-                            <option value='{{chosen.types}}'>{{chosen.types}}</option>
-                            {% endfor %}
-                        </select>
+                        {{form.types}}
                     </div>
                 </div>
                 
