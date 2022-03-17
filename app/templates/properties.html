@@ -9,12 +9,20 @@
 <ul>
     <div class = cards>
         <div class = "grid-container-properties">
-        {% for i in res %}
-            <li><img src="{{url_for('get_image', filename = i['image_name'])}}"/></li>
-            <li>{{i['title']}}</li>
-            <li>{{i['location']}}</li>
-            <li>{{i['price']}}</li>
-        {%endfor%}
+            <div class=" grid-item-properties">
+                {% for i in res %}
+                    <img src="{{url_for('get_image', filename = i['image_name'])}}"/>
+                    <div class="white">
+                        <h4>{{i['title']}}</h4>
+                        <br>
+                        <div id="temp">
+                            <p>{{i['location']}}</p>
+                            <p><div class = 'pricey'>{{i['price']}}</div></p>
+                        </div>
+                        <br>
+                    </div>
+                {%endfor%}
+            </div>
         </div>
     </div>
 </ul>

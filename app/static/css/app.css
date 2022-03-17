@@ -71,6 +71,12 @@ main{
     
 }
 
+.page-header{
+    font-weight: bold;
+    padding-left: 3%;
+    padding-bottom: 2%;
+}
+
 textarea{
     width: 87%;
     height: 20%;
@@ -135,8 +141,11 @@ button input[type=file] {
 
 img{
     width: 310px;
-    height: 300px;
-    padding: 10px;
+    height: 220px;
+}
+
+#temp{
+    padding-left: 5%;
 }
 
 .grid-container-properties{
@@ -155,4 +164,20 @@ img{
     justify-items: stretch;
 
 }
+
+.white{
+    background-color: white;
+    padding: 7px;
+}
+
+.pricey{
+    border-radius: 25px;
+    background-color: #0d6efd;
+    width: 40%;
+    padding:3px;
+    color:white;
+    align-self: center;
+    padding-left: 5%;
+}
+
 
