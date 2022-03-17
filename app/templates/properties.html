@@ -11,7 +11,7 @@
         <div class = "grid-container-properties">
             <div class=" grid-item-properties">
                 {% for i in res %}
-                    <img src="{{url_for('get_image', filename = i['image_name'])}}"/>
+                    <div id="smaller-icon"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></div>
                     <div class="white">
                         <h4>{{i['title']}}</h4>
                         <br>
@@ -19,8 +19,8 @@
                             <p>{{i['location']}}</p>
                             <p><div class = 'pricey'>{{i['price']}}</div></p>
                         </div>
-                        <br>
                     </div>
+                    <div class= "green"><a id ="loop" href="{{url_for('propertyDetails', propertyid=i['propertyid'])}}">View Property</a></div>
                 {%endfor%}
             </div>
         </div>

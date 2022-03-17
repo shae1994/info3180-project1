@@ -7,19 +7,35 @@
 {% include 'flash_messages.html' %}
 
 <ul>
-    <div class = "grid-container-property">
-        {% for i in res[1] %}
-            <li><img src="{{url_for('get_image', filename = i['image_name'])}}"/></li>
-            <h1><li>{{i['title']}}</li></h1>
-            <li>{{i['price']}}</li>
-            <li>{{i['type']}}</li>
-            <li>{{i['description']}}</li>
-            <li>{{i['no_of_bedrooms']}} Bedrooms</li>
-            <li>{{i['no_of_bathrooms']}} Bathrooms</li>
-            <li>{{i['location']}}</li>
-        {%endfor%}
+    {% for i in res[1] %}
+        <div class=" grid-item-property">
+            <div  id= "side-view"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></li></div>
+            <div class="white">
+                <div class="spacer">
+                    <h1>{{i['title']}}</h1>
+                        <div class="runner">
+                            {{i['price']}}
+                            {{i['type']}}
+                            <br>
+                        </div>
+                    <br>
+                    {{i['description']}}
+                    <br>
+                    {{i['no_of_bedrooms']}} Bedrooms
+                    <br>
+                    {{i['no_of_bathrooms']}} Bathrooms
+                    <br>
+                    {{i['location']}}
+                    <br>
+                    <br>
+                    <div id="btn"><button type="submit">Email Realtor</button></div>
+                </div>
+            </div>
+        </div>
+    </ul>
+    {%endfor%}
     </div>
 </ul>
+<br>
 
-<div id="btn"><button type="submit">Email Realtor</button></div>
 {% endblock %}

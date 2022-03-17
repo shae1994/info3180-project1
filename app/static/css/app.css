@@ -139,7 +139,7 @@ button input[type=file] {
 }
 
 
-img{
+#smaller-icon img{
     width: 310px;
     height: 220px;
 }
@@ -170,9 +170,13 @@ img{
     padding: 7px;
 }
 
+.green{
+    background-color: #0d6efd;
+}
+
 .pricey{
     border-radius: 25px;
-    background-color: #0d6efd;
+    background-color: #41c973;
     width: 40%;
     padding:3px;
     color:white;
@@ -180,4 +184,36 @@ img{
     padding-left: 5%;
 }
 
+.green a:link, a:active, a:visited, a:hover {
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 33%;
+}
+
+.green{
+    padding: 5% 0px;
+}
+
+.grid-item-property{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 2fr;
+    padding: 0%;
+}
+
+ #side-view img{
+    height: 100%;
+    width: 100%;
+}
+
+.spacer{
+    padding:5%;
+}
+
+.runner{
+    padding-left: 3%;
+}
+
+  
 
