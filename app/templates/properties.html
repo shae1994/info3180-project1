@@ -1,14 +1,21 @@
-<main> 
-    {% extends 'base.html' %}
-    {% block main %}
+   
+{% extends 'base.html' %}
 
-    <h1>Properties</h1>
-    <hr>
-    <br>
-    
-    {% include 'flash_messages.html' %}
+{% block main %}
+<h1 class="page-header">Properties</h1>
 
+{% include 'flash_messages.html' %}
 
-    
-    
-    {% endblock %}
+<ul>
+    <div class = cards>
+        <div class = "grid-container-properties">
+        {% for i in res %}
+            <li><img src="{{url_for('get_image', filename = i['image_name'])}}"/></li>
+            <li>{{i['title']}}</li>
+            <li>{{i['location']}}</li>
+            <li>{{i['price']}}</li>
+        {%endfor%}
+        </div>
+    </div>
+</ul>
+{% endblock %}

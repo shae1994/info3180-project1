@@ -10,6 +10,7 @@
         <h1>Add New Property</h1>
 
         <form action="{{url_for('create')}}" method="POST" enctype="multipart/form-data">
+            {{ form.csrf_token }}
             <div class="grey">
 
                 <div id="form-label">{{ form.title.label }}</p>
@@ -44,10 +45,12 @@
                     </div>
                     
 
-                    <div id="form-label-r-2"> {{ form.type.label }}
-                        <select name="type">
-                            {% for type in housing %}
-                            <option value="{{type }}">{{ type }}</option>
+                    <div id="form-label-r-2"> {{ form.types.label }}
+                        <br>
+                        
+                        <select name="types">
+                            {% for chosen in housing %}
+                            <option value='{{chosen.types}}'>{{chosen.types}}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -65,15 +68,13 @@
                 <br>
                 <div id="form-label"> {{ form.photo.label }}
                     <br>
-                    <input type="file" name="photo"/>
-                    <br>
+                    <div class="file"><input type="file" name="photo"/></div>
                 </div>
 
-                <br>
                 <div id="btn"><button type="submit">Add Property</button></div>
                 <br>
 
-                {{ form.csrf_token }}
+               
             </div>
         </form>
 

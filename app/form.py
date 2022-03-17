@@ -16,6 +16,6 @@ class CreateProperty(FlaskForm):
     no_of_bedrooms = StringField('No. of Rooms', validators=[DataRequired()])
     no_of_bathrooms = StringField('No. of Bathrooms', validators=[DataRequired()])
     price = StringField('Price', validators=[DataRequired()])
-    type = StringField('Property Type', validators=[DataRequired()])
+    types = StringField('Property Type', validators=[DataRequired()])
     location = StringField('Location', validators=[DataRequired()])
-    photo=FileField(validators=[FileRequired(), FileAllowed(['png', 'jpg', 'jpeg','PNG', 'JPEG', 'JPG'])])
+    photo=FileField(validators=[FileRequired(), FileAllowed(['png', 'jpg', 'jpeg','PNG', 'JPEG', 'JPG', 'jng', 'JNG'])])

@@ -13,7 +13,7 @@ body {
 
 
 #form-label{
-    padding-bottom:5px;
+    padding-bottom:3px;
 }
 
 
@@ -22,7 +22,8 @@ body {
     box-sizing: border-box;
     border-radius: 5px;
     width:75%;
-    padding: 5%;
+    padding: 4%;
+    border: 2px solid #adb5bd;
 }
 
 
@@ -66,6 +67,7 @@ main{
     height: 7%;
     box-sizing: border-box;
     border-radius: 5px;
+    border: 2px solid #adb5bd;
     
 }
 
@@ -74,7 +76,8 @@ textarea{
     height: 20%;
     box-sizing: border-box;
     border-radius: 7px;
-    }
+    border: 2px solid #adb5bd;
+}
 
 form{
     padding-top: 3%;
@@ -93,7 +96,8 @@ form{
     height: 6%;
     box-sizing: border-box;
     border-radius: 5px;
-    width:36%;
+    width:37.5%;
+    border: 2px solid #adb5bd;
 }
 
 .grey #form-label{
@@ -103,16 +107,52 @@ form{
 .grey #form-label-location{
     padding-top: 0%;
 }
+
+
 select{
-    width: 73%;
-    padding: 2%;
+
+
+    width: 75%;
+    height:35%;
     border-radius: 5%;
+    border: 2px solid #adb5bd;
+    color:black;
 }
 
-Button #btn{
-    border-radius: 4%;
-    background-color: rgb(74, 74, 162);
+button{
+    border-radius: 5%;
+    background-color: #0d6efd;
     color: white;
+    padding: 2px 7px;
+    border: none;
+}
+
+button input[type=file] {
+    border-radius: 5%;
+    border: none;
+}
+
+
+img{
+    width: 310px;
+    height: 300px;
+    padding: 10px;
+}
+
+.grid-container-properties{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+.grid-container-property{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    align-items: stretch;
+    justify-items: stretch;
 
 }
 
