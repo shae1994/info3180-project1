@@ -7,23 +7,25 @@
 {% include 'flash_messages.html' %}
 
 <ul>
-    <div class = cards>
-        <div class = "grid-container-properties">
+    <div class = "grid-container-properties">
+        {% for i in res %}
             <div class=" grid-item-properties">
-                {% for i in res %}
-                    <div id="smaller-icon"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></div>
+                <div id="smaller-icon"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></div>
                     <div class="white">
                         <h4>{{i['title']}}</h4>
                         <br>
+
                         <div id="temp">
                             <p>{{i['location']}}</p>
                             <p><div class = 'pricey'>{{i['price']}}</div></p>
                         </div>
                     </div>
                     <div class= "green"><a id ="loop" href="{{url_for('propertyDetails', propertyid=i['propertyid'])}}">View Property</a></div>
-                {%endfor%}
+                   
             </div>
+            {%endfor%}
         </div>
+        
     </div>
 </ul>
 {% endblock %}

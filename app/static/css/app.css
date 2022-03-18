@@ -140,7 +140,7 @@ button input[type=file] {
 
 
 #smaller-icon img{
-    width: 270px;
+    width: 330px;
     height: 200px;
 }
 
@@ -154,6 +154,11 @@ button input[type=file] {
     grid-gap: 10px;
     align-items: stretch;
     justify-items: stretch;
+}
+
+.grid-item-properties .white{
+    width: 330px;
+    height: 200px;;
 }
 
 .grid-container-property{
@@ -172,6 +177,7 @@ button input[type=file] {
 
 .green{
     background-color: #0d6efd;
+    width: 330px;
 }
 
 .pricey{
@@ -198,21 +204,22 @@ button input[type=file] {
 .grid-item-property{
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 2fr;
+    grid-template-rows: 1fr;
     padding: 0%;
 }
 
  #side-view img{
-    height: 500px;
-    width: 500px;
+    height: 300px;
+    width: 400px;
 }
 
 .spacer{
-    padding:5%;
+    padding-left:3%;
 }
 
 .runner{
     padding-left: 3%;
+    padding-bottom: 2%;
 }
 
   
