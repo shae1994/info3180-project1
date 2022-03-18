@@ -6,6 +6,7 @@ This file creates your application.
 """
 from operator import truediv
 import os
+from random import choices
 from sre_constants import SUCCESS
 from app import app, db
 from fileinput import filename
@@ -33,7 +34,7 @@ def home():
 def properties():
     query = Properties.query.all()
     res = [{"propertyid":i.propertyid, "title":i.title, "description":i.description,  "no_of_bedrooms":i.no_of_bedrooms,
-            "no_of_bathrooms":i.no_of_bathrooms, "price":i.price,"types":i.types, "location":i.location, "image_name":i.image_name } for i in query]
+            "no_of_bathrooms":i.no_of_bathrooms, "prices":i.prices,"types":i.types, "location":i.location, "image_name":i.image_name } for i in query]
 
     return render_template('properties.html',res=res)
 
@@ -42,7 +43,7 @@ def propertyDetails(propertyid):
     query = Properties.query.all()
     lst=[]
     res = [{"propertyid":i.propertyid, "title":i.title, "description":i.description,  "no_of_bedrooms":i.no_of_bedrooms,
-            "no_of_bathrooms":i.no_of_bathrooms, "price":i.price,
+            "no_of_bathrooms":i.no_of_bathrooms, "prices":i.prices,
             "types":i.types, "location":i.location, "image_name":i.image_name } for i in query]
     lst.append(propertyid)
     lst.append(query)
@@ -64,7 +65,7 @@ def propertyDetails(propertyid):
 def create():
     
     form = CreateProperty()
-    #housing= [{'types':'Single-Family'}, {'types':'Multi-Family'}, {'types':'Apartment'}, {'types':'Townhouse'}, {'types':'Mansion'}, {'types':'Condo'}, {'types':'Co-operative'}]
+    housing= [{'types':'Single-Family'}, {'types':'Multi-Family'}, {'types':'Apartment'}, {'types':'Townhouse'}, {'types':'Mansion'}, {'types':'Condo'}, {'types':'Co-operative'}]
 
     if request.method == 'POST':
         if form.validate_on_submit():
@@ -76,8 +77,8 @@ def create():
             d=request.form['description']
             be=request.form['no_of_bedrooms']
             ba = request.form['no_of_bathrooms']
-            p= request.form['price']
-            ty= form.ChoiceField
+            p= request.form['prices']
+            ty= request.form.get('types')
             l= request.form['location']
 
             print(ty)
@@ -90,7 +91,7 @@ def create():
             db.session.commit()
             flash('Property Added', SUCCESS)
             flash_errors(form)
-        return redirect(url_for('properties'))
+        return redirect(url_for('properties'), housing = housing)
     return render_template('form.html', form = form)
 
 @app.route('/about/')
@@ -105,7 +106,7 @@ def get_uploaded_images():
     rootdir = os.getcwd()
     for subdir, dirs, files in os.walk(rootdir + uploads):
         for file in files:
-            if file.endswith(('.jpg', '.png', '.jpeg','.JPEG', '.PNG', '.JPG')):
+            if file.endswith(('.jpg', '.png', '.jpeg','.JPEG', '.PNG', '.JPG', '.gif', '.GIF')):
                 typelist.append(file)
     return typelist
 

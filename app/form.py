@@ -15,8 +15,13 @@ class CreateProperty(FlaskForm):
     description = TextAreaField('Description', validators=[DataRequired()])
     no_of_bedrooms = StringField('No. of Rooms', validators=[DataRequired()])
     no_of_bathrooms = StringField('No. of Bathrooms', validators=[DataRequired()])
-    price = StringField('Price', validators=[DataRequired()])
+    prices = StringField('Price', validators=[DataRequired()])
+    #types = StringField('Property Types', validators=[DataRequired()])
+
+    
+
+
     types = SelectField('Property Types', choices=[('Single-Family', 'Single-Family'), ('Multi-Family', 'Multi-Family'), ('Apartment', 'Apartment'), ('Town-House', 'Town-House'), ('Mansion', 'Mansion'), ('Villa', 'Villa'), ('Condo', 'Condo'), ('Co-operative', 'Co-operative')])
     #types = SelectField('Property Type', choices=[('House'), ('Apartment')])
     location = StringField('Location', validators=[DataRequired()])
-    photo=FileField(validators=[FileRequired(), FileAllowed(['png', 'jpg', 'jpeg','PNG', 'JPEG', 'JPG', 'jng', 'JNG'])])
+    photo=FileField(validators=[FileRequired(), FileAllowed(['png', 'jpg', 'jpeg','PNG', 'JPEG', 'JPG', 'jng', 'JNG', 'gif', 'GIF'])])

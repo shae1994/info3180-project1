@@ -15,7 +15,7 @@
                         <h4>{{i['title']}}</h4>
                         <div id="temp">
                             <div id="favicon"><img src="{{url_for('get_icon', filename = 'location.jpg')}}">{{i['location']}}</div>
-                            <p><div class = 'pricey'>{{i['price']}}</div></p>
+                            <p><div class = 'pricey'>{{i['prices']}}</div></p>
                         </div>
                     </div>
                     <div class= "green"><a id ="loop" href="{{url_for('propertyDetails', propertyid=i['propertyid'])}}">View Property</a></div>
