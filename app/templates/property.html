@@ -1,4 +1,4 @@
-   
+<body>
 {% extends 'base.html' %}
 
 {% block main %}
@@ -10,21 +10,20 @@
     {% for i in res[1] %}
         {% if i['propertyid']|string() == res[0]|string() %}
         <div class=" grid-item-property">
-            <div  id= "side-view"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></li></div>
+            <div  id= "side-view"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></div>
             <div class="white">
                 <div class="spacer">
-                    <h1>{{i['title']}}</h1>
+                    <h3>{{i['title']}}</h3>
                         <div class="runner">
-                            {{i['price']}}
-                            {{i['type']}}
+                            <div id= "price">{{i['price']}}</div>
+                            <div id= "type-orange">{{i['type']}}</div>
                         </div>
-                    {{i['description']}}
-                    <br>
-                    {{i['no_of_bedrooms']}} Bedrooms
-                    {{i['no_of_bathrooms']}} Bathrooms
-                    <br>
-                    {{i['location']}}
-                    <br>
+                    <p>{{i['description']}}</p>
+                    <div class="littleimg">
+                        <div id="favicon-p"><img src="{{url_for('get_icon', filename = 'bedroom.png')}}"/>&nbsp; {{i['no_of_bedrooms']}} Bedrooms</div>
+                        <div id="favicon-p"><img src="{{url_for('get_icon', filename = 'bathroom.png')}}"/>&nbsp; {{i['no_of_bathrooms']}} Bathrooms</div>
+                    </div>
+                    <div id="favicon-p"><img src="{{url_for('get_icon', filename = 'location.jpg')}}"/>&nbsp; {{i['location']}}</div>
                     <div id="btn"><button type="submit">Email Realtor</button></div>
                 </div>
             </div>
@@ -37,3 +36,4 @@
 <br>
 
 {% endblock %}
+</body>

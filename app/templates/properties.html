@@ -1,4 +1,4 @@
-   
+<body>  
 {% extends 'base.html' %}
 
 {% block main %}
@@ -11,12 +11,10 @@
         {% for i in res %}
             <div class=" grid-item-properties">
                 <div id="smaller-icon"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></div>
-                    <div class="white">
+                    <div class="white-p">
                         <h4>{{i['title']}}</h4>
-                        <br>
-
                         <div id="temp">
-                            <p>{{i['location']}}</p>
+                            <div id="favicon"><img src="{{url_for('get_icon', filename = 'location.jpg')}}">{{i['location']}}</div>
                             <p><div class = 'pricey'>{{i['price']}}</div></p>
                         </div>
                     </div>
@@ -29,3 +27,4 @@
     </div>
 </ul>
 {% endblock %}
+</body>

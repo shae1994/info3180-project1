@@ -77,7 +77,7 @@ def create():
             be=request.form['no_of_bedrooms']
             ba = request.form['no_of_bathrooms']
             p= request.form['price']
-            ty= request.form['types']
+            ty= form.ChoiceField
             l= request.form['location']
 
             print(ty)
@@ -112,6 +112,12 @@ def get_uploaded_images():
 @app.route('/uploads/<filename>')
 def get_image(filename):
     return send_from_directory(os.path.join(os.getcwd(),app.config['UPLOAD_FOLDER']), filename)
+
+@app.route('/app/static/icons/<filename>')
+def get_icon(filename):
+    return send_from_directory(os.path.join(os.getcwd(),"app\static\icons"), filename)
+
+
 
 
 ###
