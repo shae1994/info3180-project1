@@ -140,8 +140,8 @@ button input[type=file] {
 
 
 #smaller-icon img{
-    width: 310px;
-    height: 220px;
+    width: 270px;
+    height: 200px;
 }
 
 #temp{
@@ -192,7 +192,7 @@ button input[type=file] {
 }
 
 .green{
-    padding: 5% 0px;
+    padding: 3% 0px;
 }
 
 .grid-item-property{
@@ -203,8 +203,8 @@ button input[type=file] {
 }
 
  #side-view img{
-    height: 100%;
-    width: 100%;
+    height: 500px;
+    width: 500px;
 }
 
 .spacer{

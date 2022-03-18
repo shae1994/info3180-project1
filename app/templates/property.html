@@ -8,6 +8,7 @@
 
 <ul>
     {% for i in res[1] %}
+        {% if i['propertyid']|string() == res[0]|string() %}
         <div class=" grid-item-property">
             <div  id= "side-view"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></li></div>
             <div class="white">
@@ -27,10 +28,10 @@
                     <br>
                     {{i['location']}}
                     <br>
-                    <br>
                     <div id="btn"><button type="submit">Email Realtor</button></div>
                 </div>
             </div>
+            {%endif%}
         </div>
     </ul>
     {%endfor%}

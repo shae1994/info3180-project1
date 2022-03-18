@@ -48,6 +48,16 @@ def propertyDetails(propertyid):
     lst.append(query)
     return render_template('property.html', res=lst)
 
+            
+"""properties_db = Properties()
+            properties_db.title= form.title.data
+            properties_db.description=form.description.data
+            properties_db.no_of_bedrooms= form.no_of_bedrooms.data
+            properties_db.no_of_bathrooms = form.no_of_bathrooms.data
+            properties_db.price=form.price.data
+            properties_db.type= request.form['types']
+            properties_db.location = form.location.data"""
+
 
 
 @app.route('/properties/create',methods=['GET', 'POST'])
@@ -62,23 +72,15 @@ def create():
             filename = secure_filename(img.filename)
             img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            
-            """properties_db = Properties()
-            properties_db.title= form.title.data
-            properties_db.description=form.description.data
-            properties_db.no_of_bedrooms= form.no_of_bedrooms.data
-            properties_db.no_of_bathrooms = form.no_of_bathrooms.data
-            properties_db.price=form.price.data
-            properties_db.type= request.form['types']
-            properties_db.location = form.location.data"""
-
             t= request.form['title']
             d=request.form['description']
             be=request.form['no_of_bedrooms']
-            ba = request.form['no_of_bedrooms']
+            ba = request.form['no_of_bathrooms']
             p= request.form['price']
             ty= request.form['types']
             l= request.form['location']
+
+            print(ty)
             
             properties_db = Properties(t,d,be,ba,ty,p,l, filename)
 
