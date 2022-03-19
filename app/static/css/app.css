@@ -204,11 +204,14 @@ button input[type=file] {
 .pricey{
     border-radius: 25px;
     background-color: #41c973;
-    width: 40%;
+    width:fit-content;
+    overflow: hidden;
+    white-space: nowrap;
     padding:3px;
     color:white;
     align-self: center;
     padding-left: 5%;
+    padding-right: 5%;
 }
 
 .green a:link, a:active, a:visited, a:hover {

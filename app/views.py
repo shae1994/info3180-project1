@@ -12,11 +12,13 @@ from app import app, db
 from fileinput import filename
 from sqlalchemy import create_engine
 from app.models import Properties
-from flask import send_from_directory, render_template, request, redirect, url_for, flash, session, abort
+from flask import send_from_directory, render_template, request, redirect, url_for, flash, session
 from werkzeug.utils import secure_filename
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
-from app.form import CreateProperty
+from app.forms import CreateProperty
+import psycopg2
+
 
 
 
@@ -65,7 +67,7 @@ def propertyDetails(propertyid):
 def create():
     
     form = CreateProperty()
-    housing= [{'types':'Single-Family'}, {'types':'Multi-Family'}, {'types':'Apartment'}, {'types':'Townhouse'}, {'types':'Mansion'}, {'types':'Condo'}, {'types':'Co-operative'}]
+    #housing= [{'types':'Single-Family'}, {'types':'Multi-Family'}, {'types':'Apartment'}, {'types':'Townhouse'}, {'types':'Mansion'}, {'types':'Condo'}, {'types':'Co-operative'}]
 
     if request.method == 'POST':
         if form.validate_on_submit():
@@ -78,11 +80,8 @@ def create():
             be=request.form['no_of_bedrooms']
             ba = request.form['no_of_bathrooms']
             p= request.form['prices']
-            ty= request.form.get('types')
+            ty= form.types.data
             l= request.form['location']
-
-            print(ty)
-            
             properties_db = Properties(t,d,be,ba,ty,p,l, filename)
 
              
@@ -91,7 +90,7 @@ def create():
             db.session.commit()
             flash('Property Added', SUCCESS)
             flash_errors(form)
-        return redirect(url_for('properties'), housing = housing)
+        return redirect(url_for('properties'))
     return render_template('form.html', form = form)
 
 @app.route('/about/')
