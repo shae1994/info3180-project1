@@ -7,7 +7,7 @@
     {% include 'flash_messages.html' %}
 
     <div class="form-background">
-        <h1>Add New Property</h1>
+        <h1 class="page-header">Add Property</h1>
 
         <form action="{{url_for('create')}}" method="POST" enctype="multipart/form-data">
             {{ form.csrf_token }}

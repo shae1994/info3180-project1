@@ -5,11 +5,13 @@ body {
 
 h5{
     padding-top: 10px;
+    text-align: center;
 }
 
 
 h3{
     padding-bottom: 2%;
+    text-align: center;
 }
 
 .grid-container{
@@ -207,7 +209,6 @@ button input[type=file] {
 
 .white-p{
     background-color: white;
-    padding-left: 5%;
     padding-bottom: 5%;
 }
 
@@ -223,6 +224,11 @@ button input[type=file] {
     padding-bottom: 7px;
 }
 
+
+#temp{
+
+    padding-left: 5%;
+}
 .pricey{
     border-radius: 25px;
     background-color: #41c973;
@@ -258,11 +264,11 @@ button input[type=file] {
 }
 
 
-#favicon img{
-    width:9%;
-    height: 9%;
+#favicon img {
+    width: 40px;
+    height: 23px;
     padding-right: 3%;
-    }
+}
 
 #favicon-p img{
     height: 30px;
@@ -274,19 +280,23 @@ button input[type=file] {
 #price{
     background-color: #41c973;
     width:fit-content;
+    justify-self: center;
     height: fit-content;
     border-radius: 25px;
     overflow: hidden;
     white-space: nowrap;
     padding: 2% 5%;
+    text-align: center;
 
 }
 
 #type-orange{
-    background-color: #e4b357;
+    background-color: #0d6efd;
     height: fit-content;
+    justify-self: center;
     width:fit-content;
     border-radius: 25px;
+    text-align: center;
     padding-left: 5%;
     padding-right: 5%;
     overflow: hidden;
@@ -305,7 +315,7 @@ button input[type=file] {
 
 
 p{
-    padding:2% 0px;
+    padding-top:5%;
 }
 
 #side-view img{
@@ -317,8 +327,9 @@ p{
 }
 
 .spacer{
-    padding-left:3%;
-    padding-bottom: 3%;
+    padding: 3.5%;
+    
+    justify-items: center;
 }
 
 .runner{
@@ -339,8 +350,9 @@ p{
 
 #tenure{
     border-radius: 25px;
-    background-color: #c95c41;
+    background-color: #f09037;
     width:fit-content;
+    justify-self: center;
     height: fit-content;
     overflow: hidden;
     white-space: nowrap;
