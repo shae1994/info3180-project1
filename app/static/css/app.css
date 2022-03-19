@@ -3,8 +3,13 @@ body {
     background-color: rgb(243, 240, 239);
 }
 
-h4{
+h5{
     padding-top: 10px;
+}
+
+
+h3{
+    padding-bottom: 2%;
 }
 
 .grid-container{
@@ -61,6 +66,21 @@ h4{
     grid-row-end: 2;
 }
 
+.grid-container #form-label-l-3{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    
+}
+
+.grid-container #form-label-r-3{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
 main{
     padding-left: 10%;
     padding-right: 10%;
@@ -106,7 +126,7 @@ form{
     height: 6%;
     box-sizing: border-box;
     border-radius: 5px;
-    width:37.5%;
+    width:38%;
     border: 2px solid #adb5bd;
 }
 
@@ -123,14 +143,14 @@ select{
 
 
     width: 75%;
-    height:35%;
-    border-radius: 5%;
+    height: 36%;
+    border-radius: 5px;
     border: 2px solid #adb5bd;
     color:black;
 }
 
-button{
-    border-radius: 5%;
+#btn button{
+    border-radius: 25px;
     background-color: #0d6efd;
     color: white;
     padding: 2px 7px;
@@ -142,7 +162,7 @@ button{
 }
 
 button input[type=file] {
-    border-radius: 5%;
+    border-radius: 25px;
     border: none;
 }
 
@@ -188,6 +208,7 @@ button input[type=file] {
 .white-p{
     background-color: white;
     padding-left: 5%;
+    padding-bottom: 5%;
 }
 
 .green{
@@ -199,6 +220,7 @@ button input[type=file] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    padding-bottom: 7px;
 }
 
 .pricey{
@@ -207,11 +229,9 @@ button input[type=file] {
     width:fit-content;
     overflow: hidden;
     white-space: nowrap;
-    padding:3px;
     color:white;
     align-self: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding:2% 5%;
 }
 
 .green a:link, a:active, a:visited, a:hover {
@@ -233,12 +253,16 @@ button input[type=file] {
     
 }
 
+#favicon{
+    padding-bottom: 4%;
+}
+
 
 #favicon img{
     width:9%;
     height: 9%;
     padding-right: 3%;
-}
+    }
 
 #favicon-p img{
     height: 30px;
@@ -250,36 +274,51 @@ button input[type=file] {
 #price{
     background-color: #41c973;
     width:fit-content;
-    border-radius: 12px;
-    padding: 0% 5%;
+    height: fit-content;
+    border-radius: 25px;
     overflow: hidden;
     white-space: nowrap;
+    padding: 2% 5%;
 
 }
 
 #type-orange{
     background-color: #e4b357;
+    height: fit-content;
     width:fit-content;
-    border-radius: 12px;
-    padding: 0% 5%;
+    border-radius: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
     overflow: hidden;
     white-space: nowrap;
+    padding: 2% 5%;
 
+}
+
+#option select{
+    width: 38%;
+    height:7%;
+    border-radius: 5px;
+    border: 2px solid #adb5bd;
+    color:black;
 }
 
 
 p{
-    padding-bottom:0px;
+    padding:2% 0px;
 }
 
 #side-view img{
-   width: 100%;
-height:100%;
+    width: 100%;
+    height:100%;
     object-fit: cover;
+    max-height: fit-content;
+    max-width: fit-content;
 }
 
 .spacer{
     padding-left:3%;
+    padding-bottom: 3%;
 }
 
 .runner{
@@ -290,5 +329,36 @@ height:100%;
     grid-template-rows: 1fr;
 }
 
+.runner-new{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    color:white;
+}
+
+
+#tenure{
+    border-radius: 25px;
+    background-color: #c95c41;
+    width:fit-content;
+    height: fit-content;
+    overflow: hidden;
+    white-space: nowrap;
+    align-self: center;
+    padding: 2% 5%;
+}
+
+#btn-pad{
+    padding-top: 10px;
+}
+
+#btn-pad button { 
+    border-radius: 5px;
+    background-color: #0d6efd;
+    border:none;
+    color: white;
+    padding: 5px 8px;
+    
+}
   
 

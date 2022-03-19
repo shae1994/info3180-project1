@@ -11,16 +11,18 @@ class Properties(db.Model):
     no_of_bathrooms = db.Column(db.String(10))
     types            = db.Column(db.String(25))
     prices           = db.Column(db.String(35))
+    option           = db.Column(db.String(10))
     location        = db.Column(db.String(50))
     image_name      = db.Column(db.String(50))
 
-    def __init__(self, title,description,no_of_bedrooms,no_of_bathrooms,types,prices, location, image_name ):
+    def __init__(self, title,description,no_of_bedrooms,no_of_bathrooms,types,prices,option, location, image_name ):
         self.title = title
         self.description=description
         self.no_of_bedrooms=no_of_bedrooms
         self.no_of_bathrooms= no_of_bathrooms
         self.types = types
         self.prices = prices
+        self.option = option
         self.location= location
         self.image_name= image_name
 

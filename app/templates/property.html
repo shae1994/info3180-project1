@@ -14,9 +14,11 @@
             <div class="white">
                 <div class="spacer">
                     <h3>{{i['title']}}</h3>
-                        <div class="runner">
-                            <div id= "price">{{i['prices']}}</div>
-                            <div id= "type-orange">{{i['type']}}</div>
+                        <div class="runner-new">
+                            <div id= "price"> {{i['prices']}} </div>
+                            <div id= "type-orange">{{i['types']}}</div>
+                            <div id= "tenure"> For {{i['option']}}</div>
+
                         </div>
                     <p>{{i['description']}}</p>
                     <div class="littleimg">
@@ -24,7 +26,7 @@
                         <div id="favicon-p"><img src="{{url_for('get_icon', filename = 'bathroom.png')}}"/>&nbsp; {{i['no_of_bathrooms']}} Bathrooms</div>
                     </div>
                     <div id="favicon-p"><img src="{{url_for('get_icon', filename = 'location.jpg')}}"/>&nbsp; {{i['location']}}</div>
-                    <div id="btn"><button type="submit">Email Realtor</button></div>
+                    <div id="btn-pad"><button type="submit">Email Realtor</button></div>
                 </div>
             </div>
             {%endif%}

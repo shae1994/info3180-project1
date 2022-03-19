@@ -36,8 +36,8 @@ def home():
 def properties():
     query = Properties.query.all()
     res = [{"propertyid":i.propertyid, "title":i.title, "description":i.description,  "no_of_bedrooms":i.no_of_bedrooms,
-            "no_of_bathrooms":i.no_of_bathrooms, "prices":i.prices,"types":i.types, "location":i.location, "image_name":i.image_name } for i in query]
-
+            "no_of_bathrooms":i.no_of_bathrooms, "prices":i.prices,
+            "types":i.types,"option":i.option, "location":i.location, "image_name":i.image_name } for i in query]
     return render_template('properties.html',res=res)
 
 @app.route('/property/<propertyid>')
@@ -46,7 +46,7 @@ def propertyDetails(propertyid):
     lst=[]
     res = [{"propertyid":i.propertyid, "title":i.title, "description":i.description,  "no_of_bedrooms":i.no_of_bedrooms,
             "no_of_bathrooms":i.no_of_bathrooms, "prices":i.prices,
-            "types":i.types, "location":i.location, "image_name":i.image_name } for i in query]
+            "types":i.types,"option":i.option, "location":i.location, "image_name":i.image_name } for i in query]
     lst.append(propertyid)
     lst.append(query)
     return render_template('property.html', res=lst)
@@ -81,10 +81,10 @@ def create():
             ba = request.form['no_of_bathrooms']
             p= request.form['prices']
             ty= form.types.data
+            o = form.option.data
             l= request.form['location']
-            properties_db = Properties(t,d,be,ba,ty,p,l, filename)
-
-             
+            properties_db = Properties(t,d,be,ba,ty,p,o,l, filename)
+          
 
             db.session.add(properties_db)
             db.session.commit()
