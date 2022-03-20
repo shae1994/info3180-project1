@@ -40,7 +40,7 @@ def properties():
             "types":i.types,"option":i.option, "location":i.location, "image_name":i.image_name } for i in query]
     return render_template('properties.html',res=res)
 
-@app.route('/property/<propertyid>')
+@app.route('/properties/<propertyid>')
 def propertyDetails(propertyid):
     query = Properties.query.all()
     lst=[]
@@ -115,7 +115,7 @@ def get_image(filename):
 
 @app.route('/app/static/icons/<filename>')
 def get_icon(filename):
-    return send_from_directory(os.path.join(os.getcwd(),"app\static\icons"), filename)
+    return send_from_directory(os.path.join(os.getcwd(),app.config['ICON_FOLDER']), filename)
 
 
 
