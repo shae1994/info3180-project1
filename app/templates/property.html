@@ -4,7 +4,7 @@
 {% block main %}
 <h1 class="page-header">Properties</h1>
 
-{% include 'flash_messages.html' %}
+<div class="flasher">{% include 'flash_messages.html' %}</div>
 
 <ul>
     {% for i in res[1] %}
