@@ -105,7 +105,7 @@ main{
 
 textarea{
     width: 87%;
-    height: 25%;
+    height: 2%;
     box-sizing: border-box;
     border-radius: 7px;
     border: 1px solid #adb5bd;
@@ -287,13 +287,13 @@ button input[type=file] {
 }
 
 
-#favicon img {
+#favicon svg {
     width: 40px;
     height: 23px;
     padding-right: 3%;
 }
 
-#favicon-p img{
+#favicon-p svg{
     height: 30px;
     width:30px;
     padding-bottom: 5px;
