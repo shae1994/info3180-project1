@@ -4,10 +4,12 @@
 {% block main %}
 <h1 class="page-header">Properties</h1>
 
-{% include 'flash_messages.html' %}
+
 
 <ul>
+    <div id="lefter"><div class="flasher">{% include 'flash_messages.html' %}</div></div>
     <div class = "grid-container-properties">
+        
         {% for i in res %}
             <div class=" grid-item-properties">
                 <div id="smaller-icon"><img src="{{url_for('get_image', filename = i['image_name'])}}"/></div>
