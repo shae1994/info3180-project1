@@ -34,7 +34,7 @@ h3{
     border-radius: 5px;
     width:75%;
     padding: 4%;
-    border: 2px solid #adb5bd;
+    border: 1px solid #adb5bd;
 }
 
 
@@ -93,7 +93,7 @@ main{
     height: 7%;
     box-sizing: border-box;
     border-radius: 5px;
-    border: 2px solid #adb5bd;
+    border: 1px solid #adb5bd;
     
 }
 
@@ -105,10 +105,10 @@ main{
 
 textarea{
     width: 87%;
-    height: 20%;
+    height: 25%;
     box-sizing: border-box;
     border-radius: 7px;
-    border: 2px solid #adb5bd;
+    border: 1px solid #adb5bd;
 }
 
 form{
@@ -129,7 +129,7 @@ form{
     box-sizing: border-box;
     border-radius: 5px;
     width:38%;
-    border: 2px solid #adb5bd;
+    border: 1px solid #adb5bd;
 }
 
 .grey #form-label{
@@ -147,16 +147,39 @@ select{
     width: 75%;
     height: 36%;
     border-radius: 5px;
-    border: 2px solid #adb5bd;
+    border: 1px solid #adb5bd;
     color:black;
 }
 
 #btn button{
-    border-radius: 25px;
+    border-radius: 5px;
     background-color: #0d6efd;
     color: white;
-    padding: 2px 7px;
+    padding: 5px 7px;
     border: none;
+}
+
+ #btn-pad button:hover, #btn button:hover {
+    background-color: white;
+    color:black;
+    transition: 1s;
+    border: 2px solid #3eabee;
+}
+
+
+input[type=file]::file-selector-button {
+    border: none;
+    padding: .2em .4em;
+    border-radius: .2em;
+    transition: 1s;
+    background-color: white;
+    color: black;
+    border: 1px solid #adb5bd;
+  }
+  
+input[type=file]::file-selector-button:hover {
+    background-color: #0d6efd;
+    border: 2px solid #3eabee;
 }
 
 #btn{
